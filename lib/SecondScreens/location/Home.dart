@@ -4,7 +4,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:discoverworld/SecondScreens/location/destination.dart';
 import 'package:discoverworld/SecondScreens/location/Utils.dart';
-import '';
 
 class Home extends StatefulWidget {
   @override
@@ -16,10 +15,10 @@ class _HomeState extends State<Home> {
   List<Destination> destinationlist = <Destination>[];
 
   @override
-  void initState() {
+ /* void initState() {
     _getCurrentLocation();
     super.initState();
-  }
+  }*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,15 +28,15 @@ class _HomeState extends State<Home> {
         body: Container(
 
           decoration: BoxDecoration(
-             //image: DecorationImage(
-             //  image: AssetImage('assets/images/locationBg.png'),
-          //   ),
+               image: DecorationImage(
+               image: AssetImage('assets/images/locationBg.png'),
+            ),
           ),
-          child: destinationlist.length>0?
+          child: destinations.length>0?
           ListView.builder(
               padding: EdgeInsets.all(30),
               shrinkWrap: true,
-              itemCount: destinationlist.length,
+              itemCount: destinations.length,
               itemBuilder: (context, index){
                 return Container(
                   height: 150,
@@ -48,7 +47,7 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.all(5),
                     child: Container(
                       decoration: BoxDecoration(
-                          color: Color(0xFFD4FFE0),
+                          color: Colors.blue.shade200,
                           borderRadius: BorderRadius.circular(20)
                       ),
                       child: Column(
@@ -62,19 +61,23 @@ class _HomeState extends State<Home> {
 
                                   child: Column(
                                     children: <Widget>[
-                                      Text("${destinationlist[index].name}",textAlign: TextAlign.justify,),
-                                      Text("${destinationlist[index].distance.toStringAsFixed(2)} km"),
+                                      Text("${destinations[index].name}",style:TextStyle(
+                                        fontSize: 18,
+                                      )
+                                        ,textAlign: TextAlign.center,),
+                                      //  Text("${destinations[index].distance.toStringAsFixed(2)} km"),
+                                     SizedBox(height: 20,),
+
                                       FlatButton(
                                         color: Color(0xFF0B99E0),
                                         onPressed: () async {
-                                          final url='${destinationlist[index].urlLocation}';
+                                          final url='${destinations[index].urlLocation}';
                                           if(await canLaunch(url)){
                                             await launch(url);
                                           }else if( await canLaunch(url)){
                                             await launch(url,
                                                 forceSafariVC: false);
                                           }
-
                                         },
                                         child:Text('Location on map'
                                         ),
@@ -85,7 +88,7 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
                                 InkWell(onTap: (){
-                                  launch("tel:${destinationlist[index].numberPhone}");
+                                  launch("tel:${destinations[index].numberPhone}");
                                 },
                                   child:Container(
                                     decoration: BoxDecoration(
@@ -98,7 +101,7 @@ class _HomeState extends State<Home> {
                                         Text('Call'),
                                         SizedBox(height: 30,),
                                         Icon(Icons.phone_enabled_rounded,size: 50,
-                                          color: Color(0xFFD4FFE0), )                                    ],
+                                          color: Colors.blue.shade50, )                                    ],
                                     ),
                                   ),),
                               ],
@@ -122,13 +125,13 @@ class _HomeState extends State<Home> {
   // get Current Location
   _getCurrentLocation() async{
     Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.best,
+        desiredAccuracy: LocationAccuracy.reduced,
         forceAndroidLocationManager: true)
         .then((Position position) {
       distanceCalculation(position);
-      setState(() {
+      /*setState(() {
         _currentPosition = position;
-      });
+      });*/
     }).catchError((e) {
       print(e);
     });
@@ -143,10 +146,10 @@ class _HomeState extends State<Home> {
       destinationlist.add(d);
       // print(getDistanceFromLatLonInKm(position.latitude,position.longitude, d.lat,d.lng));
     }
-    setState(() {
-      destinationlist.sort((a, b) {
+   /* setState(() {
+      destinations.sort((a, b) {
         return a.distance.compareTo(b.distance);
       });
-    });
+    });*/
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'SecondScreens/AboutUsScreen.dart';
 import 'SecondScreens/MeaningASD.dart';
 import 'SecondScreens/chickList.dart';
 import 'SecondScreens/evalScreen.dart';
@@ -33,14 +34,16 @@ class MainHomePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Center(
-              child: Text('Discover Their world',
+              child: Text('Discover Their World',
                 style: TextStyle(
+                height: 1.8,
                  color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 25,
+                  fontSize: 30,
                   fontFamily: 'Tajawal'
 
-              ),),
+              ),
+              textAlign: TextAlign.center,),
             ),
           ),
           Container(
@@ -73,10 +76,12 @@ class MainHomePage extends StatelessWidget {
                     children: <Widget>[
                       Image(image: AssetImage('assets/images/WhatIs.png')),
                       Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                      Text('What is ASD\n & its Causes',
+                      Text('About the Disease',
                         style: TextStyle(
-
-                        ),)
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      textAlign: TextAlign.justify,)
                     ],
                   ),
                 ),
@@ -95,10 +100,13 @@ class MainHomePage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Image(image: AssetImage('assets/images/checkList.png')),
+                        Image(image: AssetImage('assets/images/checkList.png',),
+                        height: 160,),
                         Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                        Text('Check List of ASD',
+                        Text('Checklist for ASD',
                           style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
                           ),)
                       ],
                     ),
@@ -108,8 +116,6 @@ class MainHomePage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Home()));
-
-
                   },
                   child: Container(
                     padding: EdgeInsets.all(10),
@@ -122,11 +128,14 @@ class MainHomePage extends StatelessWidget {
                       children: <Widget>[
                         Image(image: AssetImage('assets/images/locations.png')),
                         Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                        Text('Locations of ASD\n in Oman',
+                        Text('Locations of ASD Centers in Oman',
                           textAlign:  TextAlign.center,
                           style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
 
-                          ),)
+                        )
                       ],
                     ),
                   ),
@@ -148,9 +157,10 @@ class MainHomePage extends StatelessWidget {
                     children: <Widget>[
                       Image(image: AssetImage('assets/images/rateApp.png')),
                       Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                      Text('evaluate our App',textAlign: TextAlign.justify,
+                      Text('Evaluate',textAlign: TextAlign.justify,
                         style: TextStyle(
-
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),)
                     ],
                   ),
@@ -171,19 +181,23 @@ class MainHomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Image(image: AssetImage('assets/images/Language.png'),
-                      fit: BoxFit.scaleDown,
+                      fit: BoxFit.fitWidth,
                       width: 100,),
                       Divider(color: Colors.black,endIndent: 10,indent: 10,),
                       Text('Language/اللغة',
                         style: TextStyle(
-
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),)
                     ],
                   ),
                 ),
               ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) =>AboutUs()));
+                  },
                   child: Container(
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
@@ -197,7 +211,8 @@ class MainHomePage extends StatelessWidget {
                         Divider(color: Colors.black,endIndent: 10,indent: 10,),
                         Text('About Us',
                           style: TextStyle(
-
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
                           ),)
                       ],
                     ),
