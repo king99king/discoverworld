@@ -14,6 +14,7 @@ class MainHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration.zero, () => showAlertDialog(context));
     return Scaffold(
       body:SafeArea(
 
@@ -76,12 +77,12 @@ class MainHomePage extends StatelessWidget {
                     children: <Widget>[
                       Image(image: AssetImage('assets/images/WhatIs.png')),
                       Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                      Text('About the Disease',
+                      Text('About ASD Disorder',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
-                      textAlign: TextAlign.justify,)
+                      textAlign: TextAlign.center,),
                     ],
                   ),
                 ),
@@ -157,7 +158,7 @@ class MainHomePage extends StatelessWidget {
                     children: <Widget>[
                       Image(image: AssetImage('assets/images/rateApp.png')),
                       Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                      Text('Evaluate',textAlign: TextAlign.justify,
+                      Text('Feedback & Others',textAlign: TextAlign.justify,
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -228,4 +229,41 @@ class MainHomePage extends StatelessWidget {
       ),
     ));
   }
+}
+
+showAlertDialog(BuildContext context) {
+
+  // set up the button
+  Widget okButton = TextButton(
+    child: Text("OK"),
+    onPressed: ()=> Navigator.pop(context),
+
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    backgroundColor: Colors.blue.shade50,
+    title: Text("Alert!",
+      style: TextStyle(
+        fontFamily: 'Tajawal',
+      fontWeight: FontWeight.bold)),
+    content: Text("This application is to increase awareness levels about ASD, and through it you can evaluate your child if he has any signs and symptoms, but do not rely on it completely and you must refer to the nearest health center to diagnose your child.",
+      textAlign: TextAlign.justify,
+      style: TextStyle(
+      fontFamily: 'Tajawal',
+        fontWeight: FontWeight.bold,
+        height: 1.8
+    ),),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }

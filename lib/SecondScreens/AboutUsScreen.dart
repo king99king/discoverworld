@@ -39,7 +39,7 @@ class AboutUs extends StatelessWidget {
               width: double.infinity,
               child: Text(
                 'About the app:\n \n'
-                  'Discover their world application was developed by nursing students at Oman College of Health Science- North Batinah (OCHS-NB ) ,batch of 2022, group (1) as an idea to their graduation project .  The aim of this application is to raise awareness of Autism Spectrum Disorder awareness and prompts early diagnosis.'
+                  'We are Fourth year students from Oman College of Health Sciences and this is our graduation project. Our aim is The aim of the project is to increase the awareness level of the community and caregivers on the early signs of ASD to prompt diagnosis of autism spectrum disorder among children from 0-2 years old through mobile application development.'
 
               ,textAlign: TextAlign.justify,
               style: TextStyle(
@@ -93,8 +93,18 @@ class AboutUs extends StatelessWidget {
                     ),
                     //+++++++++++++++++++++++++++++++++++++++++++++++++
                     expanded:Text(
-                      '👨‍⚕️1.Ayoob\n'
-                      '👩‍⚕️2.abir',
+                      '👩‍⚕️1.Aisha Khalifa Rashid Al-Maamari\n'
+                      '👩‍⚕️2.Fatma Abdullah Issa Al-Mahairzi\n'
+                      '👨‍⚕️3.Faras Yahya Khalfan Al-Maqbali\n'
+                      '👩‍⚕️4.Hadil Ali Ibrahim Al-Balushi\n'
+                      '👩‍⚕️5.Manar Majed Said Al-Darmaki\n'
+                      '👩‍⚕️6.Maryam Abdullah Al-Kumzari\n'
+                      '👨‍⚕️7.Mohammed Ali Al-Amrani\n'
+                      '👩‍⚕️8.Rihab Ahmed Nasser Al-Eisaei\n'
+                      '👩‍⚕️9.Shua’a Mohammed Al-Mammari\n'
+                      '👩‍⚕️10.Wafa Mohammed Al-Maqbali\n'
+                      '👩‍⚕️11.Zakiya Ali Hamdan Al-Dahouri\n'
+                    ,
                       style: TextStyle(
                       fontFamily: 'Tajawal',
                       fontSize: 18,
@@ -116,11 +126,15 @@ class AboutUs extends StatelessWidget {
                ),
         )),
 
-             Row( children: <Widget>[
+             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+               children: <Widget>[
+                 
                Container(
+                 margin: EdgeInsets.all(10),
                    child:InkWell(
                      onTap: () async{
-                       final toEmail='ayoob12441@gmail.com';
+                       final toEmail='fatooomabdullah18@gmail.com';
                        final subject='E-mail From ASD app ';
                        final message='Hello ';
                        final url='mailto:$toEmail?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}';
@@ -128,11 +142,35 @@ class AboutUs extends StatelessWidget {
                          await launch(url);
                        }
                      },
-                     child:Icon(Icons.email_rounded,color: Colors.blue,),
+                     child:Icon(Icons.email_rounded,color: Colors.blue,size: 50,),
                    ),
                ),
+               Container(
+                 margin: EdgeInsets.all(10),
+                 child:InkWell(
+                   onTap: () {
+                     launch("tel: 90455663");
+                   },
+                   child:Icon(Icons.phone_enabled_rounded,color: Colors.blue,size: 50,),
+                 ),
+               ),
+
+
              ],
-             )
+             ),
+              SizedBox(height: 20,),
+              Container(
+                child:Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                    children:<Widget>[
+                   Icon(Icons.copyright_outlined, size: 30),
+                   Text('All Rights Reserve',
+                   style: TextStyle(
+                     fontSize: 25,
+                   ),)
+            ]
+          ),),
+              SizedBox(height: 20,)
             ],
           )
         ),

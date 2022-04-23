@@ -141,39 +141,40 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           },
         ),*/
 //==============================================1=============================
+
         CheckboxListTile(
-          title: Text('1. If you point at something across the room, does your child look at it?',
-            style: TextStyle(
-                fontFamily: 'Tajawal',
-                fontSize: 18,
-              color:Colors.white,
+            title: Text('1. If you point at something across the room, does your child look at it?',
+              style: TextStyle(
+                  fontFamily: 'Tajawal',
+                  fontSize: 18,
+                color:Colors.white,
+              ),
+              textAlign: TextAlign.justify,
             ),
-            textAlign: TextAlign.justify,
-          ),
-          contentPadding: EdgeInsets.all(10),
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10)
-          ),
-          subtitle: Text('(FOR EXAMPLE, if you point at a toy or an animal, does your child look at the toy o animal?)',
-            style: TextStyle(
-                fontFamily: 'Tajawal',
-                fontSize: 15,
-              fontWeight: FontWeight.bold,
+            contentPadding: EdgeInsets.all(10),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
             ),
-            textAlign: TextAlign.justify,
-          ),
-          tileColor: Colors.blue.shade300,
-          value: _isSelected1,
-          onChanged: (newValue) {
-            setState(() {
-              _isSelected1 = newValue!;
-              if (_isSelected1==true ){
-                num1=1;
-              }else if(_isSelected1==false){
-                num1=0;
-              }
-            });
-          },
+            subtitle: Text('(FOR EXAMPLE, if you point at a toy or an animal, does your child look at the toy o animal?)',
+              style: TextStyle(
+                  fontFamily: 'Tajawal',
+                  fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.justify,
+            ),
+            tileColor: Colors.blue.shade300,
+            value: _isSelected1,
+            onChanged: (newValue) {
+              setState(() {
+                _isSelected1 = newValue!;
+                if (_isSelected1==true ){
+                  num1=1;
+                }else if(_isSelected1==false){
+                  num1=0;
+                }
+              });
+            },
         ),
         SizedBox(height: 3,),
         //=====================================2
@@ -344,7 +345,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           },),
         SizedBox(height: 3,),
         //=====================================7
-        CheckboxListTile(
+        Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+         children:[
+          CheckboxListTile(
           title: Text('7. Does your child point with one finger to show you something interesting?',
             style: TextStyle(
               fontFamily: 'Tajawal',
@@ -355,7 +359,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           contentPadding: EdgeInsets.all(10),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10)
+              borderRadius: BorderRadius.only(topRight: Radius.circular(10),topLeft: Radius.circular(10))
           ),
           subtitle: Text('(FOR EXAMPLE, pointing to an airplane in the sky or a big truck in the road)',
             style: TextStyle(
@@ -377,6 +381,21 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               }
             });
           },),
+              Container(
+                width: double.infinity,
+              decoration: BoxDecoration(
+              color: Colors.blue.shade300,
+              borderRadius: BorderRadius.only(bottomLeft:Radius.circular(10) ,bottomRight:Radius.circular(10))
+              ),
+              child: Image(image: AssetImage(
+              'assets/images/img7ch.png',
+              ),
+                fit: BoxFit.scaleDown,
+
+              ),
+              ),
+           ],
+        ),
         SizedBox(height: 3,),
         //=====================================8
         CheckboxListTile(
@@ -635,6 +654,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           },),
         SizedBox(height: 3,),
         //=====================================16
+    Column(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children:[
         CheckboxListTile(
           title: Text('16. If you turn your head to look at something, does your child look around to see what you are looking at? ',
             style: TextStyle(
@@ -646,7 +668,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           contentPadding: EdgeInsets.all(10),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10)
+              borderRadius: BorderRadius.only(topLeft:Radius.circular(10) ,topRight:Radius.circular(10))
           ),
           tileColor: Colors.blue.shade400,
           value: _isSelected16,
@@ -660,6 +682,22 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               }
             });
           },),
+      Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+            color: Colors.blue.shade400,
+            borderRadius: BorderRadius.only(bottomLeft:Radius.circular(10) ,bottomRight:Radius.circular(10))
+        ),
+        child: Image(image: AssetImage(
+          'assets/images/img16ch.png',
+        ),
+          fit: BoxFit.scaleDown,
+
+        ),
+      ),
+
+    ]
+    ),
         SizedBox(height: 3,),
         //=====================================17
         CheckboxListTile(
@@ -732,6 +770,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           },),
         SizedBox(height: 3,),
         //=====================================19
+    Column(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children:[
         CheckboxListTile(
           title: Text('19. If something new happens, does your child look at your face to see how you feel about it? ',
             style: TextStyle(
@@ -743,7 +784,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           contentPadding: EdgeInsets.all(10),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10)
+              borderRadius: BorderRadius.only(topLeft:Radius.circular(10) ,topRight:Radius.circular(10))
           ),
           subtitle: Text('(FOR EXAMPLE, if he or she hears a strange or funny noise, or sees a new toy, will he or she look at your face?)',
             style: TextStyle(
@@ -765,6 +806,21 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               }
             });
           },),
+      Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+            color: Colors.blue.shade300,
+            borderRadius: BorderRadius.only(bottomLeft:Radius.circular(10) ,bottomRight:Radius.circular(10))
+        ),
+        child: Image(image: AssetImage(
+          'assets/images/img19ch.png',
+        ),
+          fit: BoxFit.scaleDown,
+
+        ),
+      ),
+
+    ]),
         SizedBox(height: 3,),
         //=====================================20
         CheckboxListTile(
