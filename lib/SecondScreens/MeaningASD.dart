@@ -9,7 +9,10 @@ class infoPage extends StatelessWidget {
     return SafeArea(
         child:Scaffold(
           appBar: AppBar(
-            title: const Text('ASD'),
+            title: const Text('ASD',
+            style: TextStyle(
+                fontFamily: 'Tajawal'
+            ),),
             leading: IconButton(
               icon:Icon( Icons.arrow_back,),
               onPressed: ()=>Navigator.pop(context),

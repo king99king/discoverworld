@@ -15,7 +15,7 @@ class MainHomePage_AR extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // Future.delayed(Duration.zero, () => showAlertDialog(context));
+    Future.delayed(Duration.zero, () => showAlertDialog(context));
     return Scaffold(
         body:SafeArea(
 
@@ -52,6 +52,7 @@ class MainHomePage_AR extends StatelessWidget {
               Container(
                   margin:EdgeInsets.fromLTRB(0, 60, 0, 0),
                   child: Container(
+                    height: MediaQuery.of(context).size.height,
                     decoration:BoxDecoration(
                         borderRadius: BorderRadius.circular(30)
                     ),
@@ -68,26 +69,30 @@ class MainHomePage_AR extends StatelessWidget {
                              Navigator.push(context,
                                  MaterialPageRoute(builder: (context) => infoPage_AR()));
                           },
-                          child: Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                                color: Colors.blue.shade300,
-                                borderRadius: BorderRadius.circular(10)
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image(image: AssetImage('assets/images/WhatIs.png')),
-                                Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                                Text('حول اضطراب طيف التوحد',
-                                  textDirection: TextDirection.rtl,
-                                  style: TextStyle(
-                                    fontFamily: 'Tajawal',
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  textAlign: TextAlign.center,),
-                              ],
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.vertical,
+                            child: Container(
+
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  color: Colors.blue.shade300,
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image(image: AssetImage('assets/images/WhatIs.png')),
+                                  Divider(color: Colors.black,endIndent: 10,indent: 10,),
+                                  Text('حول اضطراب طيف التوحد',
+                                    textDirection: TextDirection.rtl,
+                                    style: TextStyle(
+                                      fontFamily: 'Tajawal',
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.center,),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -102,21 +107,23 @@ class MainHomePage_AR extends StatelessWidget {
                                 color: Colors.blue.shade300,
                                 borderRadius: BorderRadius.circular(10)
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image(image: AssetImage('assets/images/checkList.png',),
-                                  height: 160,),
-                                Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                                Text('قائمة التحقق من اضطراب طيف التوحد',
-                                  textDirection: TextDirection.rtl,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: 'Tajawal',
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),)
-                              ],
+                            child: SingleChildScrollView(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image(image: AssetImage('assets/images/checkList.png',),
+                                    height: 160,),
+                                  Divider(color: Colors.black,endIndent: 10,indent: 10,),
+                                  Text('قائمة التحقق من اضطراب طيف التوحد',
+                                    textDirection: TextDirection.rtl,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Tajawal',
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),)
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -131,22 +138,24 @@ class MainHomePage_AR extends StatelessWidget {
                                 color: Colors.blue.shade300,
                                 borderRadius: BorderRadius.circular(10)
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image(image: AssetImage('assets/images/locations.png')),
-                                Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                                Text('مواقع لمراكز في سلطنة عمان لعلاج اضطراب طيف التوحد',
-                                  textDirection: TextDirection.rtl,
-                                  textAlign:  TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontFamily: 'Tajawal',
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image(image: AssetImage('assets/images/locations.png')),
+                                  Divider(color: Colors.black,endIndent: 10,indent: 10,),
+                                  Text('مواقع لمراكز في سلطنة عمان لعلاج اضطراب طيف التوحد',
+                                    textDirection: TextDirection.rtl,
+                                    textAlign:  TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontFamily: 'Tajawal',
+                                      fontWeight: FontWeight.bold,
+                                    ),
 
-                                )
-                              ],
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -162,20 +171,22 @@ class MainHomePage_AR extends StatelessWidget {
                                 color: Colors.blue.shade300,
                                 borderRadius: BorderRadius.circular(10)
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image(image: AssetImage('assets/images/rateApp.png')),
-                                Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                                Text('قائمة التقييم للبرنامج وغيرها',
-                                  textDirection: TextDirection.rtl,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontFamily: 'Tajawal',
-                                    fontWeight: FontWeight.bold,
-                                  ),)
-                              ],
+                            child: SingleChildScrollView(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image(image: AssetImage('assets/images/rateApp.png')),
+                                  Divider(color: Colors.black,endIndent: 10,indent: 10,),
+                                  Text('قائمة التقييم للبرنامج وغيرها',
+                                    textDirection: TextDirection.rtl,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontFamily: 'Tajawal',
+                                      fontWeight: FontWeight.bold,
+                                    ),)
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -190,20 +201,22 @@ class MainHomePage_AR extends StatelessWidget {
                                 color: Colors.blue.shade300,
                                 borderRadius: BorderRadius.circular(10)
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image(image: AssetImage('assets/images/Language.png'),
-                                  fit: BoxFit.fitWidth,
-                                  width: 100,),
-                                Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                                Text('Language/اللغة',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontFamily: 'Tajawal',
-                                    fontWeight: FontWeight.bold,
-                                  ),)
-                              ],
+                            child: SingleChildScrollView(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image(image: AssetImage('assets/images/Language.png'),
+                                    fit: BoxFit.fitWidth,
+                                    width: 100,),
+                                  Divider(color: Colors.black,endIndent: 10,indent: 10,),
+                                  Text('Language/اللغة',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontFamily: 'Tajawal',
+                                      fontWeight: FontWeight.bold,
+                                    ),)
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -218,20 +231,22 @@ class MainHomePage_AR extends StatelessWidget {
                                 color: Colors.blue.shade300,
                                 borderRadius: BorderRadius.circular(10)
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image(image: AssetImage('assets/images/AboutUs.png')),
-                                Divider(color: Colors.black,endIndent: 10,indent: 10,),
-                                Text('معلومات عن القائمين على البرنامج',
-                                  textAlign: TextAlign.center,
-                                  textDirection: TextDirection.rtl,
-                                  style: TextStyle(
-                                    fontFamily: 'Tajawal',
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),)
-                              ],
+                            child: SingleChildScrollView(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image(image: AssetImage('assets/images/AboutUs.png')),
+                                  Divider(color: Colors.black,endIndent: 10,indent: 10,),
+                                  Text('معلومات عن القائمين على البرنامج',
+                                    textAlign: TextAlign.center,
+                                    textDirection: TextDirection.rtl,
+                                    style: TextStyle(
+                                      fontFamily: 'Tajawal',
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),)
+                                ],
+                              ),
                             ),
                           ),
                         ),

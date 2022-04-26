@@ -79,6 +79,7 @@ class MainHomePage extends StatelessWidget {
                       Divider(color: Colors.black,endIndent: 10,indent: 10,),
                       Text('About ASD Disorder',
                         style: TextStyle(
+                          fontFamily: 'Tajawal',
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -106,6 +107,7 @@ class MainHomePage extends StatelessWidget {
                         Divider(color: Colors.black,endIndent: 10,indent: 10,),
                         Text('Checklist for ASD',
                           style: TextStyle(
+                            fontFamily: 'Tajawal',
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),)
@@ -132,6 +134,7 @@ class MainHomePage extends StatelessWidget {
                         Text('Locations of ASD Centers in Oman',
                           textAlign:  TextAlign.center,
                           style: TextStyle(
+                            fontFamily: 'Tajawal',
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -160,6 +163,7 @@ class MainHomePage extends StatelessWidget {
                       Divider(color: Colors.black,endIndent: 10,indent: 10,),
                       Text('Feedback & Others',textAlign: TextAlign.justify,
                         style: TextStyle(
+                          fontFamily: 'Tajawal',
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),)
@@ -187,6 +191,7 @@ class MainHomePage extends StatelessWidget {
                       Divider(color: Colors.black,endIndent: 10,indent: 10,),
                       Text('Language/اللغة',
                         style: TextStyle(
+                          fontFamily: 'Tajawal',
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),)
@@ -212,6 +217,7 @@ class MainHomePage extends StatelessWidget {
                         Divider(color: Colors.black,endIndent: 10,indent: 10,),
                         Text('About Us',
                           style: TextStyle(
+                            fontFamily: 'Tajawal',
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),)

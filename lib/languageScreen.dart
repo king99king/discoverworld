@@ -30,8 +30,8 @@ class LangPage extends StatelessWidget {
                children: <Widget>[
                  InkWell(
                    onTap: (){
-                     // Navigator.of(context).pushReplacement(MaterialPageRoute(
-                     //     builder: (BuildContext context) =>MainHomePage()));
+                     Navigator.of(context).pushReplacement(MaterialPageRoute(
+                         builder: (BuildContext context) =>MainHomePage()));
                    },
                    child: Container(
                      width: 120,
@@ -44,7 +44,7 @@ class LangPage extends StatelessWidget {
 
                      child: Text('English',
                        style: TextStyle(
-
+                         fontFamily: 'Tajawal',
                          fontSize: 30,
                          color: Colors.black,
 
@@ -68,6 +68,7 @@ class LangPage extends StatelessWidget {
 
                      child: Text('العربية',
                        style: TextStyle(
+                         fontFamily: 'Tajawal',
                          fontSize: 30,
                          color: Colors.black,
 

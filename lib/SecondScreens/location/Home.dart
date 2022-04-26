@@ -23,7 +23,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("ASD Centers Locations"),
+          title: Text("ASD Centers Locations",
+          style:TextStyle(
+            fontFamily: 'Tajawal',
+          ),),
         ),
         body: Container(
 
@@ -62,6 +65,7 @@ class _HomeState extends State<Home> {
                                   child: Column(
                                     children: <Widget>[
                                       Text("${destinations[index].name}",style:TextStyle(
+                                        fontFamily: 'Tajawal',
                                         fontSize: 18,
                                       )
                                         ,textAlign: TextAlign.center,),
@@ -79,7 +83,11 @@ class _HomeState extends State<Home> {
                                                 forceSafariVC: false);
                                           }
                                         },
-                                        child:Text('Location on map'
+                                        child:Text('Location on map',
+                                          style: TextStyle(
+                                            fontFamily: 'Tajawal',
+                                            fontSize: 18,
+                                          ),
                                         ),
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(8)
@@ -98,7 +106,11 @@ class _HomeState extends State<Home> {
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                                       children: <Widget>[
-                                        Text('Call'),
+                                        SizedBox(height: 10,),
+                                        Text('Call',
+                                        style: TextStyle(
+                                          fontFamily: 'Tajawal',
+                                        ),),
                                         SizedBox(height: 30,),
                                         Icon(Icons.phone_enabled_rounded,size: 50,
                                           color: Colors.blue.shade50, )                                    ],

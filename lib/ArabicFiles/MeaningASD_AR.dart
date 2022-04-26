@@ -9,7 +9,7 @@ class infoPage_AR extends StatelessWidget {
     return SafeArea(
       child:Scaffold(
         appBar: AppBar(
-          title: const Text('حول اضطراب طيب التوحد',
+          title: const Text('حول اضطراب طيف التوحد',
           style: TextStyle(
             fontFamily: 'Tajawal'
           ),),

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'HomeScreen.dart';
 import 'MainHomeScreen.dart';
 import 'SecondScreens/MeaningASD.dart';
-import 'SecondScreens/SymptomsASD.dart';
 import 'SecondScreens/chickList.dart';
 import 'SecondScreens/evalScreen.dart';
 import 'SplashScreen.dart';

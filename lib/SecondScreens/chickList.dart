@@ -13,7 +13,10 @@ class chickList20 extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('ASD Check List'),
+          title: const Text('ASD Check List',
+          style: TextStyle(
+              fontFamily: 'Tajawal'
+          ),),
           leading: IconButton(
               icon:Icon( Icons.arrow_back,),
             onPressed: ()=>Navigator.pop(context),

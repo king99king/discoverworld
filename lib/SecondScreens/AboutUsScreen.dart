@@ -12,7 +12,10 @@ class AboutUs extends StatelessWidget {
         child:
         Scaffold(
             appBar: AppBar(
-              title: const Text('About Us'),
+              title: const Text('About Us',
+              style: TextStyle(
+                  fontFamily: 'Tajawal'
+              ),),
               leading: IconButton(
                 icon:Icon( Icons.arrow_back,),
                 onPressed: ()=>Navigator.pop(context),
@@ -158,6 +161,39 @@ class AboutUs extends StatelessWidget {
 
              ],
              ),
+              Divider(color: Colors.black, endIndent: 30,indent: 30,height: 1,thickness: 0.75),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    child:InkWell(
+                      onTap: () async{
+                        final toEmail='Fars10137@gmail.com';
+                        final subject='E-mail From ASD app ';
+                        final message='Hello ';
+                        final url='mailto:$toEmail?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}';
+                        if(await canLaunch(url)){
+                          await launch(url);
+                        }
+                      },
+                      child:Icon(Icons.email_rounded,color:  Colors.deepPurple.shade400,size: 50,),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    child:InkWell(
+                      onTap: () {
+                        launch("tel: 94039793");
+                      },
+                      child:Icon(Icons.phone_enabled_rounded,color:  Colors.deepPurple.shade400,size: 50,),
+                    ),
+                  ),
+
+
+                ],
+              ),
               SizedBox(height: 20,),
               Container(
                 child:Row(
@@ -166,6 +202,7 @@ class AboutUs extends StatelessWidget {
                    Icon(Icons.copyright_outlined, size: 30),
                    Text('All Rights Reserve',
                    style: TextStyle(
+                     fontFamily: 'Tajawal',
                      fontSize: 25,
                    ),)
             ]

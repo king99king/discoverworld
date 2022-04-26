@@ -99,7 +99,7 @@ class AboutUs_AR extends StatelessWidget {
                           ),
                           //+++++++++++++++++++++++++++++++++++++++++++++++++
                           expanded:Text(
-                          "👩‍⚕️1.عائشه خليفة راشد المعمرية                           \n"
+                          "👩‍⚕️1.عائشة خليفة راشد المعمرية                           \n"
                           "👩‍⚕2.فاطمة عبدالله عيسى المحيرزية\n"
                           "👨‍⚕3.فراس يحيى خلفان المقبالي\n"
                           "👩‍⚕4.هديل علي ابراهيم البلوشية\n"
@@ -109,7 +109,7 @@ class AboutUs_AR extends StatelessWidget {
                           "👩‍⚕8.رحاب أحمد ناصر العيسائية\n"
                           "👩‍⚕9.شعاع محمد المعمرية\n"
                           "👩‍⚕10.وفاء محمد المقبالية\n"
-                          "👩‍⚕11.زكية علي حمدان الضهورية\n"
+                          "👩‍⚕11.زكية علي حمدان الظهورية\n"
                             ,
                             textDirection: TextDirection.rtl,
                             style: TextStyle(
@@ -165,6 +165,39 @@ class AboutUs_AR extends StatelessWidget {
 
                 ],
               ),
+              Divider(color: Colors.black, endIndent: 30,indent: 30,height: 1,thickness: 0.75),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    child:InkWell(
+                      onTap: () async{
+                        final toEmail='Fars10137@gmail.com';
+                        final subject='E-mail From ASD app ';
+                        final message='Hello ';
+                        final url='mailto:$toEmail?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}';
+                        if(await canLaunch(url)){
+                          await launch(url);
+                        }
+                      },
+                      child:Icon(Icons.email_rounded,color:  Colors.deepPurple.shade400,size: 50,),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    child:InkWell(
+                      onTap: () {
+                        launch("tel: 94039793");
+                      },
+                      child:Icon(Icons.phone_enabled_rounded,color:  Colors.deepPurple.shade400,size: 50,),
+                    ),
+                  ),
+
+
+                ],
+              ),
               SizedBox(height: 20,),
               Container(
                 child:Row(
@@ -174,6 +207,7 @@ class AboutUs_AR extends StatelessWidget {
                       Text('جميع الحقوق محفوظة',
                         textDirection: TextDirection.rtl,
                         style: TextStyle(
+                          fontFamily: 'Tajawal',
                           fontSize: 25,
                         ),)
                     ]

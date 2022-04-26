@@ -15,7 +15,10 @@ class _evalPageState extends State<evalPage> {
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: const Text('feedback & others'),
+            title: const Text('feedback & others',
+            style: TextStyle(
+              fontFamily: 'Tajawal'
+            ),),
             leading: IconButton(
               icon:Icon( Icons.arrow_back,),
               onPressed: ()=>Navigator.pop(context),

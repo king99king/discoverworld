@@ -68,6 +68,7 @@ class _Home_ARState extends State<Home_AR> {
                                       Text("${destinations_AR[index].name}",
                                         textDirection: TextDirection.rtl,
                                         style:TextStyle(
+                                          fontFamily: 'Tajawal',
                                         fontSize: 18,
                                       )
                                         ,textAlign: TextAlign.center,),
